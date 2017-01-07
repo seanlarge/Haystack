@@ -23,6 +23,8 @@
             // Sample
             'app.sample',
 
+            'app.products',
+
             'app.register',
 
             'app.login'
