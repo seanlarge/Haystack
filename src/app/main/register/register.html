@@ -4,15 +4,15 @@
             <span>H</span>
         </div>
         <div class="title" translate="REGISTER.INTRO_TITLE">
-          <!-- See en.json for translation data -->
+            <!-- See en.json for translation data -->
             Welcome to Haystack!
         </div>
         <div class="description" translate="REGISTER.INTRO_DESCRIPTION">
-          <!-- See en.json for translation data -->
+            <!-- See en.json for translation data -->
             Your wholesale cloud business solution for specialty, organic, and natural food.
         </div>
         <p>
-          <a class="link md-body-2" ui-sref="app.sample">LEARN MORE &rarr;</a>
+            <a class="link md-body-2" ui-sref="app.sample">LEARN MORE &rarr;</a>
         </p>
     </div>
 
@@ -27,21 +27,9 @@
             </div>
 
             <form name="registerForm" novalidate>
-                <md-input-container class="md-block" md-no-float>
-                    <input name="username" ng-model="vm.form.username" placeholder="Name"
-                           translate translate-attr-placeholder="REGISTER.NAME"
-                           required>
-                    <div ng-messages="registerForm.username.$error" role="alert">
-                        <div ng-message="required">
-                            <span translate="REGISTER.ERRORS.USERNAME_REQUIRED">Username field is required</span>
-                        </div>
-                    </div>
-                </md-input-container>
 
                 <md-input-container class="md-block" md-no-float>
-                    <input type="email" name="email" ng-model="vm.form.email" placeholder="Email"
-                           translate translate-attr-placeholder="REGISTER.EMAIL"
-                           ng-pattern="/^.+@.+\..+$/" required>
+                    <input type="email" name="email" ng-model="vm.form.email" placeholder="Email" translate translate-attr-placeholder="REGISTER.EMAIL" ng-pattern="/^.+@.+\..+$/" required>
                     <div ng-messages="registerForm.email.$error" role="alert" multiple>
                         <div ng-message="required">
                             <span translate="REGISTER.ERRORS.EMAIL_REQUIRED">Email field is required</span>
@@ -53,9 +41,7 @@
                 </md-input-container>
 
                 <md-input-container class="md-block" md-no-float>
-                    <input type="password" name="password" ng-model="vm.form.password" placeholder="Password"
-                           translate translate-attr-placeholder="REGISTER.PASSWORD"
-                           required>
+                    <input type="password" name="password" ng-model="vm.form.password" placeholder="Password" translate translate-attr-placeholder="REGISTER.PASSWORD" required>
                     <div ng-messages="registerForm.password.$error" role="alert">
                         <div ng-message="required">
                             <span translate="REGISTER.ERRORS.PASSWORD_REQUIRED">Password field is required</span>
@@ -64,10 +50,7 @@
                 </md-input-container>
 
                 <md-input-container class="md-block" md-no-float>
-                    <input type="password" name="passwordConfirm" ng-model="vm.form.passwordConfirm"
-                           placeholder="Password (Confirm)"
-                           translate translate-attr-placeholder="REGISTER.PASSWORD_CONFIRM"
-                           required>
+                    <input type="password" name="passwordConfirm" ng-model="vm.form.passwordConfirm" placeholder="Password (Confirm)" translate translate-attr-placeholder="REGISTER.PASSWORD_CONFIRM" required>
                     <div ng-messages="registerForm.passwordConfirm.$error" role="alert">
                         <div ng-message="required">
                             <span translate="REGISTER.ERRORS.PASSWORD_CONFIRM_REQUIRED">Password (Confirm) field is required</span>
@@ -83,10 +66,7 @@
                     </div>
                 </div>
 
-                <md-button type="submit" class="md-raised md-accent submit-button" aria-label="CREATE MY ACCOUNT"
-                           ng-disabled="registerForm.$invalid || registerForm.$pristine"
-                           translate="REGISTER.CREATE_ACCOUNT"
-                           translate-attr-aria-label="REGISTER.CREATE_ACCOUNT">
+                <md-button ng-click="vm.createUser()" type="submit" class="md-raised md-accent submit-button" aria-label="CREATE MY ACCOUNT" ng-disabled="registerForm.$invalid || registerForm.$pristine" translate="REGISTER.CREATE_ACCOUNT" translate-attr-aria-label="REGISTER.CREATE_ACCOUNT">
                     CREATE MY ACCOUNT
                 </md-button>
             </form>

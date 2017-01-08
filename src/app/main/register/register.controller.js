@@ -1,5 +1,4 @@
-(function ()
-{
+(function() {
     'use strict';
 
     angular
@@ -7,12 +6,18 @@
         .controller('RegisterController', RegisterController);
 
     /** @ngInject */
-    function RegisterController()
-    {
+    function RegisterController(api) {
+        var vm = this;
         // Data
 
         // Methods
+        vm.createUser = function() {
 
-        //////////
+            api.createUser(vm.form.email, vm.form.password).then(function(data) {
+                console.log('DATA ---', data);
+            });
+
+        }
     }
+
 })();
