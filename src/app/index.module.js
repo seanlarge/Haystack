@@ -1,5 +1,4 @@
-(function ()
-{
+(function() {
     'use strict';
 
     /**
@@ -25,6 +24,8 @@
 
             'app.register',
 
-            'app.login'
+            'app.login',
+
+            'app.products'
         ]);
 })();
