@@ -1,5 +1,5 @@
-(function ()
-{
+(function() {
+
     'use strict';
 
     angular
@@ -7,38 +7,25 @@
         .config(config);
 
     /** @ngInject */
-    function config($stateProvider, $translatePartialLoaderProvider, msApiProvider, msNavigationServiceProvider)
-    {
+    function config($stateProvider, $translatePartialLoaderProvider, msApiProvider, msNavigationServiceProvider) {
         // State
-        $stateProvider
-            .state('app.products', {
-                url    : '/products',
-                views  : {
-                    'content@app': {
-                        templateUrl: 'app/main/products/products.html',
-                        controller : 'ProductsController as vm'
-                    }
+        $stateProvider.state('app.products', {
+            url: '/products',
+            views: {
+                'main@': {
+                    templateUrl: 'app/core/layouts/content-only.html',
+                    controller: 'MainController as vm'
                 },
-                resolve: {
-                    ProductsData: function (msApi)
-                    {
-                        return msApi.resolve('products@get');
-                    }
+                'content@app.products': {
+                    templateUrl: 'app/main/products/products.html',
+                    controller: 'productsController as vm'
                 }
-            });
+            },
+            bodyClass: 'products'
+        });
 
         // Translation
         $translatePartialLoaderProvider.addPart('app/main/products');
 
-        // Api
-        msApiProvider.register('products', ['app/data/products/products.json']);
-
-        // Navigation
-        msNavigationServiceProvider.saveItem('fuse', {
-            title : 'PRODUCTS',
-            group : true,
-            state    : 'app.products',
-            weight: 1
-        });
     }
 })();

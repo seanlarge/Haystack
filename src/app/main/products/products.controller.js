@@ -1,21 +1,17 @@
-(function ()
-{
-    'use strict';
+<< << << < HEAD
+    (function() {
+        'use strict';
 
-    angular
-        .module('app.products')
-        .controller('ProductsController', ProductsController);
+        angular
+            .module('app.sample')
+            .controller('productsController', productsController);
 
-    /** @ngInject */
-    function ProductsController(ProductsData)
-    {
-        var vm = this;
+        /** @ngInject */
+        function productsController(api, $state) {
+            var vm = this;
 
-        // Data
-        vm.productsText = ProductsData.data.productsText;
+            // Data
 
-        // Methods
+        }
 
-        //////////
-    }
-})();
+    })();
