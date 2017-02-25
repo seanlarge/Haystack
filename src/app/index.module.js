@@ -21,17 +21,16 @@
             'app.toolbar',
 
             // Quick Panel
-            // 'app.quick-panel',
+            //'app.quick-panel',
 
             // Sample
             'app.sample',
-
-            'app.e-commerce',
 
             'app.register',
 
             'app.login',
 
+            'app.e-commerce'
 
         ]);
 })();

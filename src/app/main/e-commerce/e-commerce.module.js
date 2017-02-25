@@ -10,7 +10,6 @@
             'textAngular',
             'uiGmapgoogle-maps',
             'xeditable'
-
         ])
         .config(config);
 
@@ -25,10 +24,6 @@
             .state('app.e-commerce.dashboard', {
                 url: '/dashboard',
                 views: {
-                    'main@': {
-                        templateUrl: 'app/core/layouts/content-only.html',
-                        controller: 'MainController as vm'
-                    },
                     'content@app': {
                         templateUrl: 'app/main/e-commerce/views/dashboard/dashboard.html',
                         controller: 'DashboardEcommerceController as vm'
@@ -44,10 +39,6 @@
             .state('app.e-commerce.products', {
                 url: '/products',
                 views: {
-                    'main@': {
-                        templateUrl: 'app/core/layouts/content-only.html',
-                        controller: 'MainController as vm'
-                    },
                     'content@app': {
                         templateUrl: 'app/main/e-commerce/views/products/products.html',
                         controller: 'ProductsController as vm'
@@ -63,10 +54,6 @@
             .state('app.e-commerce.products.detail', {
                 url: '/:id',
                 views: {
-                    'main@': {
-                        templateUrl: 'app/core/layouts/content-only.html',
-                        controller: 'MainController as vm'
-                    },
                     'content@app': {
                         templateUrl: 'app/main/e-commerce/views/product/product.html',
                         controller: 'ProductController as vm'
@@ -83,10 +70,6 @@
                 url: '/orders',
                 views: {
                     'content@app': {
-                        'main@': {
-                            templateUrl: 'app/core/layouts/content-only.html',
-                            controller: 'MainController as vm'
-                        },
                         templateUrl: 'app/main/e-commerce/views/orders/orders.html',
                         controller: 'OrdersController as vm'
                     }
@@ -104,10 +87,6 @@
             .state('app.e-commerce.orders.detail', {
                 url: '/:id',
                 views: {
-                    'main@': {
-                        templateUrl: 'app/core/layouts/content-only.html',
-                        controller: 'MainController as vm'
-                    },
                     'content@app': {
                         templateUrl: 'app/main/e-commerce/views/order/order.html',
                         controller: 'OrderController as vm'
@@ -136,25 +115,25 @@
         msApiProvider.register('e-commerce.order', ['app/data/e-commerce/order.json']);
 
         // Navigation
-        // msNavigationServiceProvider.saveItem('apps.e-commerce', {
-        //     title: 'E-Commerce',
-        //     icon: 'icon-cart',
-        //     weight: 3
-        // });
+        msNavigationServiceProvider.saveItem('apps.e-commerce', {
+            title: 'E-Commerce',
+            icon: 'icon-cart',
+            weight: 3
+        });
 
-        // msNavigationServiceProvider.saveItem('apps.e-commerce.dashboard', {
-        //     title: 'Dashboard',
-        //     state: 'app.e-commerce.dashboard'
-        // });
+        msNavigationServiceProvider.saveItem('apps.e-commerce.dashboard', {
+            title: 'Dashboard',
+            state: 'app.e-commerce.dashboard'
+        });
 
-        // msNavigationServiceProvider.saveItem('apps.e-commerce.products', {
-        //     title: 'Products',
-        //     state: 'app.e-commerce.products'
-        // });
+        msNavigationServiceProvider.saveItem('apps.e-commerce.products', {
+            title: 'Products',
+            state: 'app.e-commerce.products'
+        });
 
-        // msNavigationServiceProvider.saveItem('apps.e-commerce.orders', {
-        //     title: 'Orders',
-        //     state: 'app.e-commerce.orders'
-        // });
+        msNavigationServiceProvider.saveItem('apps.e-commerce.orders', {
+            title: 'Orders',
+            state: 'app.e-commerce.orders'
+        });
     }
 })();
