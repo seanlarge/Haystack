@@ -6,6 +6,10 @@
      */
     angular
         .module('fuse', [
+            // Common 3rd Party Dependencies
+            'uiGmapgoogle-maps',
+            'textAngular',
+            'xeditable',
 
             // Core
             'app.core',
@@ -17,17 +21,16 @@
             'app.toolbar',
 
             // Quick Panel
-            // 'app.quick-panel',
+            //'app.quick-panel',
 
             // Sample
             'app.sample',
-
-            'app.products',
 
             'app.register',
 
             'app.login',
 
-            'app.products'
+            'app.e-commerce'
+
         ]);
 })();

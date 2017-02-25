@@ -83,11 +83,11 @@
                     'navigation@app': {
                         templateUrl: layouts[layoutStyle].navigation,
                         controller: 'NavigationController as vm'
-                    },
-                    'quickPanel@app': {
-                        templateUrl: 'app/quick-panel/quick-panel.html',
-                        controller: 'QuickPanelController as vm'
                     }
+                    // 'quickPanel@app': {
+                    //     templateUrl: 'app/quick-panel/quick-panel.html',
+                    //     controller: 'QuickPanelController as vm'
+                    // }
                 }
             });
     }
