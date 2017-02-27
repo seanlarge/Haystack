@@ -15,20 +15,9 @@
 
 
         // create user
-        api.createUser = function(email, password) {
-            return $http.post(api.baseUrl + 'users.json', {
-                user: {
-                    email: email,
-                    password: password
-                }
-            }).success(function(res) {
-                console.log('Success ---', res);
-            }).error(function(err) {
-                console.error(err);
-            })
-        }
+        api.createUser = $resource(api.basUrl + 'auth')
 
-        api.login = $resource(api.baseUr + '/login');
+        api.login = $resource(api.baseUrl + 'login');
         /*
          api.dashboard = {
          project  : $resource(api.baseUrl + 'dashboard/project/data.json'),
