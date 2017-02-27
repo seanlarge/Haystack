@@ -12,10 +12,16 @@
 
         // Methods
         vm.createUser = function() {
-            api.createUser.put({ email: vm.form.email, password: vm.form.password, password_confirmation: vm.form.password },
+            api.createUser.save({ email: vm.form.email, password: vm.form.password, password_confirmation: vm.form.password },
                 function(success) {
                     console.log(success);
-
+                    api.establishSession.save({ email: vm.form.email, password: vm.form.password },
+                        function(success) {
+                            $location.path('/e-commerce/products');
+                        },
+                        function(error) {
+                            console.log(error);
+                        })
                 },
                 function(error) {
                     console.log(error);

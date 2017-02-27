@@ -14,10 +14,20 @@
         api.baseUrl = 'https://shophaystack.herokuapp.com/';
 
 
-        // create user
-        api.createUser = $resource(api.basUrl + 'auth')
+        //  registration and authentication
+        api.createUser = $resource(api.baseUrl + 'auth')
 
         api.login = $resource(api.baseUrl + 'login');
+
+        api.establishSession = $resource(api.baseUrl + 'auth/sign_in');
+
+        // {
+        //     'get': { method: 'GET' },
+        //     'save': { method: 'POST' },
+        //     'query': { method: 'GET', isArray: true },
+        //     'remove': { method: 'DELETE' },
+        //     'delete': { method: 'DELETE' }
+        // };
         /*
          api.dashboard = {
          project  : $resource(api.baseUrl + 'dashboard/project/data.json'),
