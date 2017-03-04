@@ -6,7 +6,7 @@
         .controller('RegisterController', RegisterController);
 
     /** @ngInject */
-    function RegisterController(api, $scope, $state, $location) {
+    function RegisterController(api, $scope, $state, $location, $rootScope) {
         var vm = this;
         // Data
 
@@ -14,10 +14,11 @@
         vm.createUser = function() {
             api.createUser.save({ email: vm.form.email, password: vm.form.password, password_confirmation: vm.form.password },
                 function(success) {
-                    console.log(success);
                     api.establishSession.save({ email: vm.form.email, password: vm.form.password },
-                        function(success) {
+                        function(success, headersFun) {
                             $location.path('/e-commerce/products');
+                            $rootScope.user = success.data;
+                            $rootScope.headers = headersFun();
                         },
                         function(error) {
                             console.log(error);
@@ -26,14 +27,6 @@
                 function(error) {
                     console.log(error);
                 });
-
-            // api.createUser(vm.form.email, vm.form.password).then(function(data) {
-            //     console.log('DATA ---', data);
-            //     // if successful log in redirect to products
-            //     $state.go('app.products');
-            //     //$location.path('/products');
-            // });
-
         }
     }
 

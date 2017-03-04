@@ -17,10 +17,17 @@
         //  registration and authentication
         api.createUser = $resource(api.baseUrl + 'auth')
 
-        api.login = $resource(api.baseUrl + 'login');
-
         api.establishSession = $resource(api.baseUrl + 'auth/sign_in');
 
+        api.logout = $resource(api.baseUrl + 'auth/sign_out', {},{
+            delete: {
+                headers: {
+                'access-token': $http.defaults.headers['access-token'], 
+                client: $http.defaults.headers.client, 
+                 uid: $http.defaults.headers.uid
+                }
+            }
+        });
         // {
         //     'get': { method: 'GET' },
         //     'save': { method: 'POST' },
