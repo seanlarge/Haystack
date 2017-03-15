@@ -6,7 +6,7 @@
         .factory('api', apiService);
 
     /** @ngInject */
-    function apiService($resource, $http) {
+    function apiService($resource, $http, $cookies, $location) {
 
         var api = {};
 
@@ -19,15 +19,41 @@
 
         api.establishSession = $resource(api.baseUrl + 'auth/sign_in');
 
-        api.logout = $resource(api.baseUrl + 'auth/sign_out', {},{
-            delete: {
-                headers: {
-                'access-token': $http.defaults.headers['access-token'], 
-                client: $http.defaults.headers.client, 
-                 uid: $http.defaults.headers.uid
-                }
-            }
-        });
+        api.logout = function() {
+            $http.delete(api.baseUrl + 'auth/sign_out', {
+                    headers: {
+                        'access-token': $http.defaults.headers['access-token'],
+                        client: $http.defaults.headers.client,
+                        uid: $http.defaults.headers.uid
+                    }
+                }).success(function(success) {
+                    console.log(success);
+                    $cookies.remove('access_token');
+                    $cookies.remove('expiry');
+                    $cookies.remove('uid');
+                    $cookies.remove('token-type');
+                    $cookies.remove('client');
+                    $cookies.remove('user');
+                    delete $http.defaults.headers['access-token'];
+                    delete $http.defaults.headers.uid;
+                    delete $http.defaults.headers.client;
+                    $location.path('/login');
+                })
+                .error(function(error) {
+                    console.log(error);
+                });
+        }
+
+        // $resource(api.baseUrl + 'auth/sign_out', {}, {
+        //     delete: {
+        //         method: 'OPTIONS',
+        //         headers: {
+        //             'access-token': $http.defaults.headers['access-token'],
+        //             client: $http.defaults.headers.client,
+        //             uid: $http.defaults.headers.uid
+        //         }
+        //     }
+        // });
         // {
         //     'get': { method: 'GET' },
         //     'save': { method: 'POST' },

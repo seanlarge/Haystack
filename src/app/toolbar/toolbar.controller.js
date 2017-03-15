@@ -6,7 +6,7 @@
         .controller('ToolbarController', ToolbarController);
 
     /** @ngInject */
-    function ToolbarController($rootScope, $q, $state, $timeout, $mdSidenav, $translate, $mdToast, msNavigationService, auth, $cookies) {
+    function ToolbarController($rootScope, $q, $state, $timeout, $mdSidenav, $translate, $mdToast, msNavigationService, auth, $cookies, $http) {
         var vm = this;
         vm.userEmail = $cookies.get('user');
         // Data
@@ -110,6 +110,7 @@
          */
         function logout() {
             // Do logout here..
+            console.log($http.defaults.headers);
             auth.logOut();
             // api.logout.delete({},
             //     function(success) {
