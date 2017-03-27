@@ -1,0 +1,22 @@
+<div class="md-inline-form">
+
+    <div layout="column" layout-gt-xs="row" flex>
+        <md-input-container flex="100" flex-gt-xs="50">
+            <input type="text" name="firstname" ng-model="vm.verticalStepper.step1.firstname" placeholder="First name" required>
+            <div ng-messages="verticalStep1.firstname.$error" role="alert">
+                <div ng-message="required">
+                    <span>First name field is required.</span>
+                </div>
+            </div>
+        </md-input-container>
+
+        <md-input-container flex="100" flex-gt-xs="50">
+            <input type="text" name="lastname" ng-model="vm.verticalStepper.step1.lastname" placeholder="Last name">
+            <div ng-messages="verticalStep1.lastname.$error" ng-show="verticalStep1.lastname.$touched" role="alert">
+                <div ng-message="required">
+                    <span>Last name field is required.</span>
+                </div>
+            </div>
+        </md-input-container>
+    </div>
+</div>

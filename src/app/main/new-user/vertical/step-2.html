@@ -1,0 +1,13 @@
+<div class="md-inline-form">
+
+    <div layout="column" layout-gt-xs="row" flex>
+        <md-input-container flex="100" flex-gt-xs="50">
+            <input type="text" name="companyname" ng-model="vm.verticalStepper.step2.companyName" placeholder="Company Name" required>
+            <div ng-messages="verticalStep2.companyname.$error" role="alert">
+                <div ng-message="required">
+                    <span>Company name field is required.</span>
+                </div>
+            </div>
+        </md-input-container>
+    </div>
+</div>
