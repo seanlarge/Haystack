@@ -1,7 +1,12 @@
 <div class="md-inline-form">
     <div layout="column" layout-gt-xs="row" flex>
         <md-input-container flex="100" flex-gt-xs="50">
-            <input type="text" name="Description" ng-model="vm.verticalStepper.step3.companyDescription" placeholder="Tell us about the company" md-maxlength="150" optional>
+            <input type="text" name="description" ng-model="vm.verticalStepper.step3.companyDescription" placeholder="Tell us about the company" md-maxlength="150" required>
+            <div ng-messages="verticalStep3.description.$error" role="alert">
+                <div ng-message="required">
+                    <span>Please give us a description.</span>
+                </div>
+            </div>
         </md-input-container>
     </div>
 </div>
