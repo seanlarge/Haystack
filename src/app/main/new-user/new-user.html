@@ -1,0 +1,27 @@
+<div id="forms" class="page-layout simple fullwidth doc-page" layout="column">
+    <!-- VERTICAL STEPPER -->
+    <div class="content" layout="column">
+        <form name="verticalStepper" ms-vertical-stepper ng-submit="vm.submitVerticalStepper()" ng-model="vm.verticalStepper" novalidate>
+            <ms-vertical-stepper-step ng-form="verticalStep1" step="1" step-title="'Personal Information'">
+                <div ng-include="'app/main/new-user/vertical/step-1.html'"></div>
+            </ms-vertical-stepper-step>
+
+            <ms-vertical-stepper-step ng-form="verticalStep2" step="2" step-title="'Company Name'">
+                <div ng-include="'app/main/new-user/vertical/step-2.html'"></div>
+            </ms-vertical-stepper-step>
+
+            <ms-vertical-stepper-step ng-form="verticalStep3" step="3" step-title="'Company Details'">
+                <div ng-include="'app/main/new-user/vertical/step-3.html'"></div>
+            </ms-vertical-stepper-step>
+
+            <ms-vertical-stepper-step ng-form="verticalStep4" step="4" step-title="'Address'">
+                <div ng-include="'app/main/new-user/vertical/step-4.html'"></div>
+            </ms-vertical-stepper-step>
+
+            <ms-vertical-stepper-step ng-form="verticalStep5" step="5" step-title="'Payment Method'">
+                <div ng-include="'app/main/new-user/vertical/step-5.html'"></div>
+            </ms-vertical-stepper-step>
+        </form>
+    </div>
+    <!-- / VERTICAL STEPPER -->
+</div>

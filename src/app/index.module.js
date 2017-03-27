@@ -28,6 +28,8 @@
 
             'app.register',
 
+            'app.new-user',
+
             'app.login',
 
             'app.e-commerce'
