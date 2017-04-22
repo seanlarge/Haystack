@@ -30,6 +30,8 @@
 
             'app.new-user',
 
+            'app.pages.profile',
+
             'app.login',
 
             'app.e-commerce'
