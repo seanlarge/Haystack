@@ -8,14 +8,11 @@
 
             <div class="content">
                 <div class="info-line">
-                    <div class="title" translate="PROFILE.GENDER">Gender</div>
-                    <div class="info">{{vm.about.general.gender}}</div>
+                    <div class="title" translate="PROFILE.COMPANY">Company</div>
+                    <div class="info">{{vm.about.general.company}}</div>
                 </div>
 
-                <div class="info-line">
-                    <div class="title" translate="PROFILE.BIRTHDAY">Birthday</div>
-                    <div class="info">{{vm.about.general.birthday}}</div>
-                </div>
+
 
                 <div class="info-line">
                     <div class="title" translate="PROFILE.LOCATIONS">Locations</div>
@@ -26,36 +23,8 @@
                 </div>
 
                 <div class="info-line">
-                    <div class="title" translate="PROFILE.ABOUT_ME">About Me</div>
+                    <div class="title" translate="PROFILE.ABOUT_US">About Us</div>
                     <div class="info">{{vm.about.general.about}}</div>
-                </div>
-            </div>
-        </div>
-
-        <div class="profile-box info-box work md-whiteframe-1dp" layout="column">
-            <header class="md-accent-bg">
-                <div class="title" translate="PROFILE.WORK">Work</div>
-            </header>
-
-            <div class="content">
-                <div class="info-line">
-                    <div class="title" translate="PROFILE.OCCUPATION">Occupation</div>
-                    <div class="info">{{vm.about.work.occupation}}</div>
-                </div>
-
-                <div class="info-line">
-                    <div class="title" translate="PROFILE.SKILLS">Skills</div>
-                    <div class="info">{{vm.about.work.skills}}</div>
-                </div>
-
-                <div class="info-line">
-                    <div class="title" translate="PROFILE.JOBS">Jobs</div>
-                    <table class="info jobs">
-                        <tr class="job" ng-repeat="job in vm.about.work.jobs">
-                            <td class="company">{{job.company}}</td>
-                            <td class="date">{{job.date}}</td>
-                        </tr>
-                    </table>
                 </div>
             </div>
         </div>
@@ -89,45 +58,48 @@
                 </div>
             </div>
         </div>
-    </div>
-
-    <div class="about-sidebar" layout="column" flex="100" flex-gt-sm="50" flex-gt-md="35">
-        <div class="profile-box friends md-whiteframe-1dp" layout="column">
-            <header class="md-accent-bg" layout="row" layout-align="space-between center">
-                <div class="title" translate="PROFILE.FRIENDS">Friends</div>
-                <div class="more secondary-text">
-                    <span translate="PROFILE.SEE">See</span>
-                    <span>454</span>
-                    <span translate="PROFILE.MORE">More</span>
-                </div>
+        <div class="profile-box info-box work md-whiteframe-1dp" layout="column">
+            <header class="md-accent-bg">
+                <div class="title" translate="PROFILE.DISTRIBUTION">Distribution</div>
             </header>
-            <div class="content" layout="row" layout-wrap>
-                <div class="friend" flex="20" ng-repeat="friend in vm.about.friends">
-                    <img ng-src="{{friend.avatar}}">
+
+            <div class="content">
+                <div class="info-line">
+                    <div class="title" translate="PROFILE.LIMITATIONS">Limitations</div>
+                    <div class="info">{{vm.about.work.limitations}}</div>
+                </div>
+
+                <div class="info-line">
+                    <div class="title" translate="PROFILE.CHANNELS">Channels</div>
+                    <div class="info">{{vm.about.work.channels}}</div>
+                </div>
+
+                <div class="info-line">
+                    <div class="title" translate="PROFILE.PRICING">Pricing</div>
+                    <div class="info">{{vm.about.work.pricing}}</div>
                 </div>
             </div>
         </div>
 
+    </div>
+
+    <div class="about-sidebar" layout="column" flex="100" flex-gt-sm="50" flex-gt-md="35">
+
         <div class="profile-box groups md-whiteframe-1dp" layout="column">
             <header class="md-accent-bg" layout="row" layout-align="space-between center">
-                <div class="title" translate="PROFILE.JOINED_GROUPS">Joined Groups</div>
-                <div class="more secondary-text">
-                    <span translate="PROFILE.SEE">See</span>
-                    <span>6</span>
-                    <span translate="PROFILE.MORE">More</span>
-                </div>
+                <div class="title" translate="PROFILE.JOINED_GROUPS">Joined Retailers</div>
             </header>
 
             <div class="content">
                 <div class="group" ng-repeat="group in vm.about.groups" layout="row"
                      layout-align="space-between center">
                     <div layout="row" layout-align="start center">
-                        <img ng-src="{{group.logo}}" class="logo" alt="{{group.name}}"/>
+                        <!-- <img ng-src="{{group.logo}}" class="logo" alt="{{group.name}}"/> -->
 
                         <div>
                             <div class="name">{{group.name}}</div>
                             <div class="category">{{group.category}}</div>
-                            <div class="members">{{group.members}} people</div>
+                            <div class="members">{{group.units}} units sold</div>
                         </div>
                     </div>
                     <md-button class="md-icon-button" aria-label="more" translate

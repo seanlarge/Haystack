@@ -1,27 +1,18 @@
 {
     "data": {
         "general": {
-            "gender": "Female",
+            "company": "Bobs Burgers",
             "birthday": "May 8th, 1988",
             "locations": [
-                "Istanbul, Turkey",
+                "Washington, D.C., USA",
                 "New York, USA"
             ],
             "about": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis eget pharetra felis, sed ullamcorper dui. Sed et elementum neque. Vestibulum pellente viverra ultrices. Etiam justo augue, vehicula ac gravida a, interdum sit amet nisl. Integer vitae nisi id nibh dictum mollis in vitae tortor."
         },
         "work": {
-            "occupation": "Developer",
-            "skills": "C#, PHP, Javascript, Angular, JS, HTML, CSS",
-            "jobs": [
-                {
-                    "company": "Self-Employed",
-                    "date": "2010 - Now"
-                },
-                {
-                    "company": "Google",
-                    "date": "2008 - 2010"
-                }
-            ]
+            "channels": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis eget pharetra felis, sed ullamcorper dui. Sed et elementum neque. Vestibulum pellente viverra ultrices. Etiam justo augue, vehicula ac gravida a, interdum sit amet nisl. Integer vitae nisi id nibh dictum mollis in vitae tortor.",
+            "limitations": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis eget pharetra felis, sed ullamcorper dui. Sed et elementum neque. Vestibulum pellente viverra ultrices. Etiam justo augue, vehicula ac gravida a, interdum sit amet nisl. Integer vitae nisi id nibh dictum mollis in vitae tortor.",
+            "pricing": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis eget pharetra felis, sed ullamcorper dui. Sed et elementum neque. Vestibulum pellente viverra ultrices. Etiam justo augue, vehicula ac gravida a, interdum sit amet nisl. Integer vitae nisi id nibh dictum mollis in vitae tortor. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis eget pharetra felis, sed ullamcorper dui. Sed et elementum neque. Vestibulum pellente viverra ultrices. Etiam justo augue,  vehicula ac gravida a, interdum sit amet nisl. Integer vitae nisi id nibh dictum mollis in vitae tortor"
         },
         "contact": {
             "address": "Ut pharetra luctus est quis sodales. Duis nisi tortor, bibendum eget tincidunt, aliquam ac elit. Mauris nec euismod odio.",
@@ -40,21 +31,21 @@
         "groups": [
             {
                 "logo": "assets/images/logos/android.png",
-                "name": "Android",
-                "category": "Technology",
-                "members": "1.856.546"
+                "name": "Wholefoods",
+                "category": "grocery",
+                "units": "1.856.546"
             },
             {
                 "logo": "assets/images/logos/google.png",
-                "name": "Google",
-                "category": "Web",
-                "members": "1.226.121"
+                "name": "Moms Organic",
+                "category": "grocery",
+                "units": "1.226.121"
             },
             {
                 "logo": "assets/images/logos/fallout.png",
-                "name": "Fallout",
-                "category": "Games",
-                "members": "526.142"
+                "name": "Union Market",
+                "category": "market",
+                "units": "526.142"
             }
         ],
         "friends": [

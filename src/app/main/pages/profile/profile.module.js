@@ -10,7 +10,7 @@
     function config($stateProvider, $translatePartialLoaderProvider, msApiProvider, msNavigationServiceProvider)
     {
         $stateProvider.state('app.pages_profile', {
-            url      : '/pages/profile',
+            url      : '/profile',
             views    : {
                 'content@app': {
                     templateUrl: 'app/main/pages/profile/profile.html',
@@ -29,6 +29,9 @@
                 PhotosVideos: function (msApi)
                 {
                     return msApi.resolve('profile.photosVideos@get');
+                },
+                Dashboard: function(msApi) {
+                    return msApi.resolve('e-commerce.dashboard@get');
                 }
             },
             bodyClass: 'profile'

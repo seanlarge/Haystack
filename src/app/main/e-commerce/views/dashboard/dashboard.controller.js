@@ -8,7 +8,6 @@
     /** @ngInject */
     function DashboardEcommerceController(Dashboard) {
         var vm = this;
-        console.log('hi');
         // Data
         vm.dashboard = Dashboard;
 
