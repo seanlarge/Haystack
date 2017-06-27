@@ -128,10 +128,10 @@
         }
          vm.prods= [{
             "id": 1,
-            "title": "Food",
-            "subtitle": "food made locally is the best",
+            "title": "Fermented Pickles",
+            "subtitle": "by Number 1 Sons",
             "button2": "Details",
-            "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam fermentum sagittis magna vehicula malesuada. Integer viverra ultricies eros, eget cursus massa placerat et. Quisque pellentesque consequat nulla mollis cursus. Sed posuere ipsum sed sapien laoreet, quis euismod metus pulvinar. Duis ullamcorper, purus non consequat ornare, justo metus faucibus arcu, in tincidunt lectus metus ac lacus. Nulla luctus sem in ex imperdiet, et porta elit feugiat. Morbi venenatis ex lacus, quis fermentum tortor varius non. Donec ut vehicula velit.",
+            "text": "Number 1 Sons is the DC area's fermented food business. We have cucumber pickles from late spring to early fall. Find our kimchis, krauts + other seasonal fermented vegetables yearround at farmers markets in DC, MD and VA. Most recently, Number 1 Sons started making barrel fermented hot sauces + kombucha.",
             "media": {
                 "image": {
                     "src": "assets/images/stock/food-healthy-vegetables-potatoes.jpg",
@@ -141,10 +141,10 @@
         },
         {
             "id": 2,
-            "title": "Food",
-            "subtitle": "food made locally is the best",
+            "title": "Kimchi",
+            "subtitle": "by Number 1 Sons",
             "button2": "Details",
-            "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam fermentum sagittis magna vehicula malesuada. Integer viverra ultricies eros, eget cursus massa placerat et. Quisque pellentesque consequat nulla mollis cursus. Sed posuere ipsum sed sapien laoreet, quis euismod metus pulvinar. Duis ullamcorper, purus non consequat ornare, justo metus faucibus arcu, in tincidunt lectus metus ac lacus. Nulla luctus sem in ex imperdiet, et porta elit feugiat. Morbi venenatis ex lacus, quis fermentum tortor varius non. Donec ut vehicula velit.",
+            "text": "Number 1 Sons is the DC area's fermented food business. We have cucumber pickles from late spring to early fall. Find our kimchis, krauts + other seasonal fermented vegetables yearround at farmers markets in DC, MD and VA. Most recently, Number 1 Sons started making barrel fermented hot sauces + kombucha.",
             "media": {
                 "image": {
                     "src": "assets/images/stock/food-healthy-vegetables-potatoes.jpg",
@@ -154,10 +154,10 @@
         },
         {
             "id": 3,
-            "title": "Food",
-            "subtitle": "food made locally is the best",
+            "title": "Chili Bear Hot Sauce",
+            "subtitle": "by Number 1 Sons",
             "button2": "Details",
-            "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam fermentum sagittis magna vehicula malesuada. Integer viverra ultricies eros, eget cursus massa placerat et. Quisque pellentesque consequat nulla mollis cursus. Sed posuere ipsum sed sapien laoreet, quis euismod metus pulvinar. Duis ullamcorper, purus non consequat ornare, justo metus faucibus arcu, in tincidunt lectus metus ac lacus. Nulla luctus sem in ex imperdiet, et porta elit feugiat. Morbi venenatis ex lacus, quis fermentum tortor varius non. Donec ut vehicula velit.",
+            "text": "Number 1 Sons is the DC area's fermented food business. We have cucumber pickles from late spring to early fall. Find our kimchis, krauts + other seasonal fermented vegetables yearround at farmers markets in DC, MD and VA. Most recently, Number 1 Sons started making barrel fermented hot sauces + kombucha.",
             "media": {
                 "image": {
                     "src": "assets/images/stock/food-healthy-vegetables-potatoes.jpg",
@@ -167,10 +167,10 @@
         },
         {
             "id": 4,
-            "title": "Food",
-            "subtitle": "food made locally is the best",
+            "title": "Kombucha",
+            "subtitle": "by Number 1 Sons",
             "button2": "Details",
-            "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam fermentum sagittis magna vehicula malesuada. Integer viverra ultricies eros, eget cursus massa placerat et. Quisque pellentesque consequat nulla mollis cursus. Sed posuere ipsum sed sapien laoreet, quis euismod metus pulvinar. Duis ullamcorper, purus non consequat ornare, justo metus faucibus arcu, in tincidunt lectus metus ac lacus. Nulla luctus sem in ex imperdiet, et porta elit feugiat. Morbi venenatis ex lacus, quis fermentum tortor varius non. Donec ut vehicula velit.",
+            "text": "Number 1 Sons is the DC area's fermented food business. We have cucumber pickles from late spring to early fall. Find our kimchis, krauts + other seasonal fermented vegetables yearround at farmers markets in DC, MD and VA. Most recently, Number 1 Sons started making barrel fermented hot sauces + kombucha.",
             "media": {
                 "image": {
                     "src": "assets/images/stock/food-healthy-vegetables-potatoes.jpg",
@@ -180,10 +180,10 @@
         },
         {
             "id": 5,
-            "title": "Food",
-            "subtitle": "food made locally is the best",
+            "title": "Strawberry Pear Lemon Ginger",
+            "subtitle": "by Misfit Juicery",
             "button2": "Details",
-            "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam fermentum sagittis magna vehicula malesuada. Integer viverra ultricies eros, eget cursus massa placerat et. Quisque pellentesque consequat nulla mollis cursus. Sed posuere ipsum sed sapien laoreet, quis euismod metus pulvinar. Duis ullamcorper, purus non consequat ornare, justo metus faucibus arcu, in tincidunt lectus metus ac lacus. Nulla luctus sem in ex imperdiet, et porta elit feugiat. Morbi venenatis ex lacus, quis fermentum tortor varius non. Donec ut vehicula velit.",
+            "text": "This is not a juice company. Over 20 billion pounds of fresh produce goes unharvested or unsold every year because it is the wrong size, shape or color to be sold at retail. Thousands of pounds of trimming and scrap waste goes into the landfill when companies make fresh cut products like carrot sticks and watermelon cubes. The struggle is real. Luckily, so is the solution. We make our delicious, nutritious cold-pressed juices with 70-80% recovered fruits and veggies. MISFIT reimagines the way we engage with food by finding flavor, purpose, and personality in the misfits. Here’s how we’re changing the food system",
             "media": {
                 "image": {
                     "src": "assets/images/stock/food-healthy-vegetables-potatoes.jpg",
@@ -193,10 +193,10 @@
         },
         {
             "id": 6,
-            "title": "Food",
-            "subtitle": "food made locally is the best",
+            "title": "Pear Cucumber Spinach Lemon",
+            "subtitle": "by Misfit Juicery",
             "button2": "Details",
-            "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam fermentum sagittis magna vehicula malesuada. Integer viverra ultricies eros, eget cursus massa placerat et. Quisque pellentesque consequat nulla mollis cursus. Sed posuere ipsum sed sapien laoreet, quis euismod metus pulvinar. Duis ullamcorper, purus non consequat ornare, justo metus faucibus arcu, in tincidunt lectus metus ac lacus. Nulla luctus sem in ex imperdiet, et porta elit feugiat. Morbi venenatis ex lacus, quis fermentum tortor varius non. Donec ut vehicula velit.",
+            "text": "This is not a juice company. Over 20 billion pounds of fresh produce goes unharvested or unsold every year because it is the wrong size, shape or color to be sold at retail. Thousands of pounds of trimming and scrap waste goes into the landfill when companies make fresh cut products like carrot sticks and watermelon cubes. The struggle is real. Luckily, so is the solution. We make our delicious, nutritious cold-pressed juices with 70-80% recovered fruits and veggies. MISFIT reimagines the way we engage with food by finding flavor, purpose, and personality in the misfits. Here’s how we’re changing the food system",
             "media": {
                 "image": {
                     "src": "assets/images/stock/food-healthy-vegetables-potatoes.jpg",

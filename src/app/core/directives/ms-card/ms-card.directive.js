@@ -27,6 +27,7 @@
                     // Methods
                     scope.cardTemplateLoaded = cardTemplateLoaded;
                     scope.gotoProductDetail = gotoProductDetail;
+                    scope.trim = trim;
                     //////////
 
                     /**
@@ -39,6 +40,9 @@
                     function cardTemplateLoaded()
                     {
                         scope.$emit('msCard::cardTemplateLoaded', iElement);
+                    }
+                    function trim(str){
+                        return str.slice(0, 320) + ' ...Click details for more';
                     }
                 };
             }
