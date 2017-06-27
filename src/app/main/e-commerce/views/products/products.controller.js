@@ -126,5 +126,122 @@
         {
             $state.go('app.e-commerce.products.detail', {id: id});
         }
+         vm.prods= [{
+            "id": 1,
+            "title": "Food",
+            "subtitle": "food made locally is the best",
+            "button2": "Details",
+            "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam fermentum sagittis magna vehicula malesuada. Integer viverra ultricies eros, eget cursus massa placerat et. Quisque pellentesque consequat nulla mollis cursus. Sed posuere ipsum sed sapien laoreet, quis euismod metus pulvinar. Duis ullamcorper, purus non consequat ornare, justo metus faucibus arcu, in tincidunt lectus metus ac lacus. Nulla luctus sem in ex imperdiet, et porta elit feugiat. Morbi venenatis ex lacus, quis fermentum tortor varius non. Donec ut vehicula velit.",
+            "media": {
+                "image": {
+                    "src": "assets/images/stock/food-healthy-vegetables-potatoes.jpg",
+                    "alt": "Early Sunrise"
+                }
+            }
+        },
+        {
+            "id": 2,
+            "title": "Food",
+            "subtitle": "food made locally is the best",
+            "button2": "Details",
+            "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam fermentum sagittis magna vehicula malesuada. Integer viverra ultricies eros, eget cursus massa placerat et. Quisque pellentesque consequat nulla mollis cursus. Sed posuere ipsum sed sapien laoreet, quis euismod metus pulvinar. Duis ullamcorper, purus non consequat ornare, justo metus faucibus arcu, in tincidunt lectus metus ac lacus. Nulla luctus sem in ex imperdiet, et porta elit feugiat. Morbi venenatis ex lacus, quis fermentum tortor varius non. Donec ut vehicula velit.",
+            "media": {
+                "image": {
+                    "src": "assets/images/stock/food-healthy-vegetables-potatoes.jpg",
+                    "alt": "Early Sunrise"
+                }
+            }
+        },
+        {
+            "id": 3,
+            "title": "Food",
+            "subtitle": "food made locally is the best",
+            "button2": "Details",
+            "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam fermentum sagittis magna vehicula malesuada. Integer viverra ultricies eros, eget cursus massa placerat et. Quisque pellentesque consequat nulla mollis cursus. Sed posuere ipsum sed sapien laoreet, quis euismod metus pulvinar. Duis ullamcorper, purus non consequat ornare, justo metus faucibus arcu, in tincidunt lectus metus ac lacus. Nulla luctus sem in ex imperdiet, et porta elit feugiat. Morbi venenatis ex lacus, quis fermentum tortor varius non. Donec ut vehicula velit.",
+            "media": {
+                "image": {
+                    "src": "assets/images/stock/food-healthy-vegetables-potatoes.jpg",
+                    "alt": "Early Sunrise"
+                }
+            }
+        },
+        {
+            "id": 4,
+            "title": "Food",
+            "subtitle": "food made locally is the best",
+            "button2": "Details",
+            "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam fermentum sagittis magna vehicula malesuada. Integer viverra ultricies eros, eget cursus massa placerat et. Quisque pellentesque consequat nulla mollis cursus. Sed posuere ipsum sed sapien laoreet, quis euismod metus pulvinar. Duis ullamcorper, purus non consequat ornare, justo metus faucibus arcu, in tincidunt lectus metus ac lacus. Nulla luctus sem in ex imperdiet, et porta elit feugiat. Morbi venenatis ex lacus, quis fermentum tortor varius non. Donec ut vehicula velit.",
+            "media": {
+                "image": {
+                    "src": "assets/images/stock/food-healthy-vegetables-potatoes.jpg",
+                    "alt": "Early Sunrise"
+                }
+            }
+        },
+        {
+            "id": 5,
+            "title": "Food",
+            "subtitle": "food made locally is the best",
+            "button2": "Details",
+            "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam fermentum sagittis magna vehicula malesuada. Integer viverra ultricies eros, eget cursus massa placerat et. Quisque pellentesque consequat nulla mollis cursus. Sed posuere ipsum sed sapien laoreet, quis euismod metus pulvinar. Duis ullamcorper, purus non consequat ornare, justo metus faucibus arcu, in tincidunt lectus metus ac lacus. Nulla luctus sem in ex imperdiet, et porta elit feugiat. Morbi venenatis ex lacus, quis fermentum tortor varius non. Donec ut vehicula velit.",
+            "media": {
+                "image": {
+                    "src": "assets/images/stock/food-healthy-vegetables-potatoes.jpg",
+                    "alt": "Early Sunrise"
+                }
+            }
+        },
+        {
+            "id": 6,
+            "title": "Food",
+            "subtitle": "food made locally is the best",
+            "button2": "Details",
+            "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam fermentum sagittis magna vehicula malesuada. Integer viverra ultricies eros, eget cursus massa placerat et. Quisque pellentesque consequat nulla mollis cursus. Sed posuere ipsum sed sapien laoreet, quis euismod metus pulvinar. Duis ullamcorper, purus non consequat ornare, justo metus faucibus arcu, in tincidunt lectus metus ac lacus. Nulla luctus sem in ex imperdiet, et porta elit feugiat. Morbi venenatis ex lacus, quis fermentum tortor varius non. Donec ut vehicula velit.",
+            "media": {
+                "image": {
+                    "src": "assets/images/stock/food-healthy-vegetables-potatoes.jpg",
+                    "alt": "Early Sunrise"
+                }
+            }
+        },
+        {
+            "id": 7,
+            "title": "Food",
+            "subtitle": "food made locally is the best",
+            "button2": "Details",
+            "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam fermentum sagittis magna vehicula malesuada. Integer viverra ultricies eros, eget cursus massa placerat et. Quisque pellentesque consequat nulla mollis cursus. Sed posuere ipsum sed sapien laoreet, quis euismod metus pulvinar. Duis ullamcorper, purus non consequat ornare, justo metus faucibus arcu, in tincidunt lectus metus ac lacus. Nulla luctus sem in ex imperdiet, et porta elit feugiat. Morbi venenatis ex lacus, quis fermentum tortor varius non. Donec ut vehicula velit.",
+            "media": {
+                "image": {
+                    "src": "assets/images/stock/food-healthy-vegetables-potatoes.jpg",
+                    "alt": "Early Sunrise"
+                }
+            }
+        },
+        {
+            "id": 8,
+            "title": "Food",
+            "subtitle": "food made locally is the best",
+            "button2": "Details",
+            "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam fermentum sagittis magna vehicula malesuada. Integer viverra ultricies eros, eget cursus massa placerat et. Quisque pellentesque consequat nulla mollis cursus. Sed posuere ipsum sed sapien laoreet, quis euismod metus pulvinar. Duis ullamcorper, purus non consequat ornare, justo metus faucibus arcu, in tincidunt lectus metus ac lacus. Nulla luctus sem in ex imperdiet, et porta elit feugiat. Morbi venenatis ex lacus, quis fermentum tortor varius non. Donec ut vehicula velit.",
+            "media": {
+                "image": {
+                    "src": "assets/images/stock/food-healthy-vegetables-potatoes.jpg",
+                    "alt": "Early Sunrise"
+                }
+            }
+        },
+        {
+            "id": 9,
+            "title": "Food",
+            "subtitle": "food made locally is the best",
+            "button2": "Details",
+            "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam fermentum sagittis magna vehicula malesuada. Integer viverra ultricies eros, eget cursus massa placerat et. Quisque pellentesque consequat nulla mollis cursus. Sed posuere ipsum sed sapien laoreet, quis euismod metus pulvinar. Duis ullamcorper, purus non consequat ornare, justo metus faucibus arcu, in tincidunt lectus metus ac lacus. Nulla luctus sem in ex imperdiet, et porta elit feugiat. Morbi venenatis ex lacus, quis fermentum tortor varius non. Donec ut vehicula velit.",
+            "media": {
+                "image": {
+                    "src": "assets/images/stock/food-healthy-vegetables-potatoes.jpg",
+                    "alt": "Early Sunrise"
+                }
+            }
+        }];
     }
 })();

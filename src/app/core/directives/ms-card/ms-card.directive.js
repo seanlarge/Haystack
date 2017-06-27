@@ -7,7 +7,7 @@
         .directive('msCard', msCardDirective);
 
     /** @ngInject */
-    function msCardDirective()
+    function msCardDirective($state)
     {
         return {
             restrict: 'E',
@@ -26,12 +26,16 @@
                 {
                     // Methods
                     scope.cardTemplateLoaded = cardTemplateLoaded;
-
+                    scope.gotoProductDetail = gotoProductDetail;
                     //////////
 
                     /**
                      * Emit cardTemplateLoaded event
                      */
+                    function gotoProductDetail(id)
+                    {
+                        $state.go('app.e-commerce.products.detail', {id: id});
+                    }
                     function cardTemplateLoaded()
                     {
                         scope.$emit('msCard::cardTemplateLoaded', iElement);
