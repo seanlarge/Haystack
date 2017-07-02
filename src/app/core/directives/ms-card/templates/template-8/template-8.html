@@ -1,4 +1,4 @@
-<div class="template-8" layout-xs>
+<div class="template-8">
     <div class="media">
         <img class="image" ng-src="{{card.media.image.src}}" alt="{{card.media.image.alt}}" ng-show="card.media.image">
     </div>
@@ -13,8 +13,8 @@
         </div>
 
         <div class="buttons pt-16">
-            <md-button class="m-0">{{card.button1}}</md-button>
-            <md-button class="m-0 md-accent" ng-click="gotoProductDetail(card.id)">{{card.button2}}</md-button>
+            <!--<md-button class="m-0">{{card.button1}}</md-button>-->
+            <md-button class="m-0 md-accent md-raised" ng-click="gotoProductDetail(card.id)">{{card.button2}}</md-button>
         </div>
 
         <div class="text pt-16" ng-if="card.text">

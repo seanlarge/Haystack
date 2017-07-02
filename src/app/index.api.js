@@ -45,7 +45,7 @@
                     console.log(error);
                 });
         }
-
+        api.productsById = $resource(api.baseUrl + 'products/:id', {id:'@id'});
         
         //     'get': { method: 'GET' },
         //     'save': { method: 'POST' },
