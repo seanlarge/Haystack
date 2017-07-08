@@ -7,6 +7,8 @@
             .image {
                 width: 100%;
                 border-radius: 2px 2px 0 0;
+                // TODO this will need to change when dealing with image quality
+                height: 215px;
             }
         }
     }

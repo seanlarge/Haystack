@@ -3,15 +3,14 @@
     <!-- HEADER -->
     <div class="header md-accent-bg" layout="row" layout-align="start center">
         <div class="white-fg" layout="row" layout-align="start center" flex>
-            <md-button class="goto-products-button md-icon-button" aria-label="Go to products"
-                       ng-click="vm.gotoProducts()"
-                       translate translate-attr-aria-label="EC.GO_TO_PRODUCTS">
+            <md-button class="goto-products-button md-icon-button" aria-label="Go to products" ng-click="vm.gotoProducts()" translate
+                translate-attr-aria-label="EC.GO_TO_PRODUCTS">
                 <md-icon md-font-icon="icon-arrow-left"></md-icon>
             </md-button>
 
             <div layout="row" layout-align="start center">
                 <div class="product-image" hide-xs>
-                    <img ng-src="{{vm.product.images[0].url}}">
+                    <img ng-src="{{vm.product.image}}">
                 </div>
 
                 <div layout="column" layout-align="start start">
@@ -56,16 +55,13 @@
 
                             <md-input-container class="md-block">
                                 <label translate="EC.CATEGORIES">Categories</label>
-                                <md-select ng-model="vm.product.categories"
-                                           md-on-open="vm.onCategoriesSelectorOpen()"
-                                           md-on-close="vm.onCategoriesSelectorClose()" multiple>
+                                <md-select ng-model="vm.product.categories" md-on-open="vm.onCategoriesSelectorOpen()" md-on-close="vm.onCategoriesSelectorClose()"
+                                    multiple>
                                     <md-select-header>
-                                        <input type="search" class="md-text"
-                                               ng-model="vm.categoriesSelectFilter" placeholder="Search for a category">
+                                        <input type="search" class="md-text" ng-model="vm.categoriesSelectFilter" placeholder="Search for a category">
                                     </md-select-header>
                                     <md-optgroup>
-                                        <md-option ng-value="category"
-                                                   ng-repeat="category in vm.product.categories | filter:vm.categoriesSelectFilter">
+                                        <md-option ng-value="category" ng-repeat="category in vm.product.categories | filter:vm.categoriesSelectFilter">
                                             {{category}}
                                         </md-option>
                                     </md-optgroup>
@@ -73,11 +69,8 @@
                             </md-input-container>
 
                             <h3 class="tags secondary-text" translate="EC.TAGS">Tags</h3>
-                            <md-chips ng-model="vm.product.tags"
-                                      placeholder="Enter a tag"
-                                      delete-button-label="Remove Tag"
-                                      delete-hint="Press delete to remove tag"
-                                      secondary-placeholder="+Tag">
+                            <md-chips ng-model="vm.product.tags" placeholder="Enter a tag" delete-button-label="Remove Tag" delete-hint="Press delete to remove tag"
+                                secondary-placeholder="+Tag">
                             </md-chips>
                         </form>
                     </div>
@@ -91,17 +84,9 @@
 
                 <md-tab-body>
                     <div class="product-detail-form-container md-background-bg md-whiteframe-1dp">
-                        <div id="product-image-uploader"
-                             flow-init="vm.ngFlowOptions"
-                             flow-name="vm.ngFlow.flow"
-                             flow-files-submitted="vm.upload()"
-                             flow-file-added="vm.fileAdded($file)"
-                             flow-file-success="vm.fileSuccess($file, $message)"
-                             flow-complete="vm.uploadComplete()"
-                             flow-drop
-                             flow-drag-enter="vm.dropping=true"
-                             flow-drag-leave="vm.dropping=false"
-                             ng-class="{'dropping':vm.dropping}">
+                        <div id="product-image-uploader" flow-init="vm.ngFlowOptions" flow-name="vm.ngFlow.flow" flow-files-submitted="vm.upload()"
+                            flow-file-added="vm.fileAdded($file)" flow-file-success="vm.fileSuccess($file, $message)" flow-complete="vm.uploadComplete()"
+                            flow-drop flow-drag-enter="vm.dropping=true" flow-drag-leave="vm.dropping=false" ng-class="{'dropping':vm.dropping}">
 
                             <div class="drop-text hint-text" layout="row" layout-align="center center">
                                 <span translate="EC.DROP_TO_UPLOAD">Drop to upload</span>
@@ -115,8 +100,8 @@
                             </div>
 
                             <div layout="row" layout-align="start start" layout-wrap>
-                                <div ng-repeat="image in vm.product.images" ng-switch="image.type">
-                                    <div class="product-image uploading" ng-switch-when="uploading" layout="row"
+                                <div >
+                                    <!--<div class="product-image uploading"  layout="row"
                                          layout-align="center center">
                                         <div class="overlay" layout="column" layout-align="center center">
                                             <md-progress-linear md-mode="determinate"
@@ -124,11 +109,11 @@
                                             </md-progress-linear>
                                         </div>
                                         <img class="media" flow-img="image.file">
-                                    </div>
+                                    </div>-->
 
-                                    <div class="product-image" ng-switch-when="image" layout="row"
+                                    <div class="product-image"  layout="row"
                                          layout-align="center center">
-                                        <img class="media" ng-src="{{image.url}}">
+                                        <img class="media" ng-src="{{vm.product.image}}">
                                     </div>
                                 </div>
                             </div>

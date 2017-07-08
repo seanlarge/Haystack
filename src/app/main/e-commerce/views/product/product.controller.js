@@ -1,5 +1,4 @@
-(function ()
-{
+(function () {
     'use strict';
 
     angular
@@ -7,8 +6,7 @@
         .controller('ProductController', ProductController);
 
     /** @ngInject */
-    function ProductController($document, $state, Product)
-    {
+    function ProductController($document, $state, $http, Product, S3) {
         var vm = this;
 
         // Data
@@ -17,7 +15,6 @@
             ['justifyLeft', 'justifyCenter', 'justifyRight', 'justifyFull', 'indent', 'outdent', 'html', 'insertImage', 'insertLink', 'insertVideo', 'wordcount', 'charcount']
         ];
         vm.product = Product;
-        console.log('product --------', vm.product);
         vm.categoriesSelectFilter = '';
         vm.ngFlowOptions = {
             // You can configure the ngFlow from here
@@ -49,8 +46,7 @@
         /**
          * Initialize
          */
-        function init()
-        {
+        function init() {
             // Select the correct product from the data.
             // This is an unnecessary step for a real world app
             // because normally, you would request the product
@@ -61,10 +57,8 @@
             // it.
             var id = $state.params.id;
 
-            for ( var i = 0; i < vm.product.length; i++ )
-            {
-                if ( vm.product[i].id === parseInt(id) )
-                {
+            for (var i = 0; i < vm.product.length; i++) {
+                if (vm.product[i].id === parseInt(id)) {
                     vm.product = vm.product[i];
                     break;
                 }
@@ -75,20 +69,17 @@
         /**
          * Go to products page
          */
-        function gotoProducts()
-        {
+        function gotoProducts() {
             $state.go('app.e-commerce.products');
         }
 
         /**
          * On categories selector open
          */
-        function onCategoriesSelectorOpen()
-        {
+        function onCategoriesSelectorOpen() {
             // The md-select directive eats keydown events for some quick select
             // logic. Since we have a search input here, we don't need that logic.
-            $document.find('md-select-header input[type="search"]').on('keydown', function (e)
-            {
+            $document.find('md-select-header input[type="search"]').on('keydown', function (e) {
                 e.stopPropagation();
             });
         }
@@ -96,8 +87,7 @@
         /**
          * On categories selector close
          */
-        function onCategoriesSelectorClose()
-        {
+        function onCategoriesSelectorClose() {
             // Clear the filter
             vm.categoriesSelectFilter = '';
 
@@ -111,25 +101,29 @@
          *
          * @param file
          */
-        function fileAdded(file)
-        {
+        function fileAdded(file) {
+
+
             // Prepare the temp file data for media list
             var uploadingFile = {
-                id  : file.uniqueIdentifier,
+                id: file.uniqueIdentifier,
                 file: file,
                 type: 'uploading'
             };
-
+            S3.upload(file, vm.product);
+            
             // Append it to the media list
-            vm.product.images.unshift(uploadingFile);
+            //TODO NEED A PROGRESS BAR OR SPINNER
+            var changePicture = setTimeout(function(){
+              vm.product.image = 'https://s3.amazonaws.com/haystack-image/' + trim(vm.product.company_name + file.name);
+            }, 1000);     
         }
 
         /**
          * Upload
          * Automatically triggers when files added to the uploader
          */
-        function upload()
-        {
+        function upload() {
             // Set headers
             vm.ngFlow.flow.opts.headers = {
                 'X-Requested-With': 'XMLHttpRequest',
@@ -146,22 +140,18 @@
          * @param file
          * @param message
          */
-        function fileSuccess(file, message)
-        {
+        function fileSuccess(file, message) {
             // Iterate through the media list, find the one we
             // are added as a temp and replace its data
             // Normally you would parse the message and extract
             // the uploaded file data from it
-            angular.forEach(vm.product.images, function (media, index)
-            {
-                if ( media.id === file.uniqueIdentifier )
-                {
+            angular.forEach(vm.product.images, function (media, index) {
+                if (media.id === file.uniqueIdentifier) {
                     // Normally you would update the media item
                     // from database but we are cheating here!
                     var fileReader = new FileReader();
                     fileReader.readAsDataURL(media.file.file);
-                    fileReader.onload = function (event)
-                    {
+                    fileReader.onload = function (event) {
                         media.url = event.target.result;
                     };
 
@@ -170,6 +160,9 @@
                 }
             });
         }
-       
+        function trim(str) {
+            return str.replace(/ /g, '');
+        }
+
     }
 })();

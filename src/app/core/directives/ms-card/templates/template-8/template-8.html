@@ -1,24 +1,46 @@
 <div class="template-8">
     <div class="media">
-        <img class="image" ng-src="{{card.media.image.src}}" alt="{{card.media.image.alt}}" ng-show="card.media.image">
+        <!--ng-show="card.media.image"-->
+        <img class="image" ng-src="{{switchImage(card)}}" >
     </div>
 
     <div class="content pv-24 ph-16">
-        <div class="title h1" ng-if="card.title">
-            {{card.title}}
+        <div class="title h1" ng-if="card.name">
+            {{card.name}}
         </div>
 
-        <div class="subtitle secondary-text" ng-if="card.subtitle">
-            {{card.subtitle}}
+        <div class="subtitle secondary-text" ng-if="card.company_name">
+            {{card.company_name}}
         </div>
 
         <div class="buttons pt-16">
             <!--<md-button class="m-0">{{card.button1}}</md-button>-->
-            <md-button class="m-0 md-accent md-raised" ng-click="gotoProductDetail(card.id)">{{card.button2}}</md-button>
+            <md-button class="m-0 md-accent md-raised" ng-click="gotoProductDetail(card.id)">Details</md-button>
         </div>
 
-        <div class="text pt-16" ng-if="card.text">
-            {{trim(card.text)}}
+        <div class="text pt-16" ng-if="card.description">
+            {{trim(card.description)}}
         </div>
     </div>
 </div>
+
+ <!--"id": 11,
+    "name": "Lime",
+    "description": "Shrub District Cocktail Vinegars are perfectly balanced drink mixers. They are tart and sweet, complex and pure, hip and casual. Mix them in a simple highball with your favorite spirit and a splash of soda. Or use them as the acid component in a cocktail. Or refresh yourself with an all natural, low-calorie soda.\n\nWhatever you’re drinking, Shrub District flavors provide the perfect balance for a busy, rewarding life. They’ll make your drinking life easier, better, and more fun. \n\nShrub District Cocktail Vinegars are the smoothest on the market. They are made in Washington, DC, from fresh fruit, herbs, and spices. ",
+    "client_id": null,
+    "created_at": "2017-07-02T22:16:33.170Z",
+    "updated_at": "2017-07-02T22:16:33.170Z",
+    "category": "",
+    "price_cents": null,
+    "quantity": null,
+    "active": true,
+    "subcategory": "",
+    "distribution": "",
+    "unique_selling_propositions": "",
+    "distribution_limitations": "We sell our 8oz bottles wholesale to retailers in cases of 12. We sell 750ml bottles to restaurants and bars, no minimum order.",
+    "distribution_channels": "",
+    "drop_ship_capability": null,
+    "approvals_certifications": "",
+    "private_label_capability": "",
+    "target_audience": "grocery; gourmet shops; home goods stores; boutiques; restaurants; bars",
+    "company_name": "Shrub District"-->

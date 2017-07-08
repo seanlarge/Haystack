@@ -45,8 +45,8 @@
                     console.log(error);
                 });
         }
-        api.productsById = $resource(api.baseUrl + 'products/:id', {id:'@id'});
-        
+        api.productsById = $resource(api.baseUrl + 'products/:id', {id:'@id'}, {'put': {method:'PUT'},'get':{method: 'GET'}});
+        api.allProducts = $resource(api.baseUrl + 'products/',{}, {'get': {method:'GET', isArray: true}});
         //     'get': { method: 'GET' },
         //     'save': { method: 'POST' },
         //     'query': { method: 'GET', isArray: true },
