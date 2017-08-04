@@ -32,6 +32,9 @@
                 },
                 Dashboard: function(msApi) {
                     return msApi.resolve('e-commerce.dashboard@get');
+                },
+                Products: function(msApi) {
+                     return msApi.resolve('e-commerce.products@get');
                 }
             },
             bodyClass: 'profile'

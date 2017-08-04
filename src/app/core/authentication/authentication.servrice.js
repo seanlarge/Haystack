@@ -5,7 +5,7 @@
         .factory('auth', authenticationService);
 
     /**@ngInject */
-    function authenticationService($resource, $http, $cookies, api, $location, $log) {
+    function authenticationService($cookies, $http, $location, $log, $resource, $rootScope, api) {
         var auth = {};
         auth.register = function(newUser) {
             api.createUser.save(newUser,
@@ -13,6 +13,7 @@
                     api.establishSession.save(newUser,
                         function(success, headersFun) {
                             var head = headersFun();
+                            console.log(head);
                             var user = success.data;
                             $cookies.put('access_token', head['access-token']);
                             $http.defaults.headers['access-token'] = head['access-token'];
@@ -23,8 +24,9 @@
                             $cookies.put('client', head['client']);
                             $http.defaults.headers.client = head.client;
                             $cookies.put('user', user['email']);
-                            // LOCATION changes to new person form
-                            $location.path('/e-commerce/products');
+                            $rootScope.user = head;
+                            $rootScope.newUser = true;
+                            $location.path('/profile');
                         },
                         function(error) {
                             $log.error(error);
@@ -49,10 +51,13 @@
                     $cookies.put('client', head['client']);
                     $http.defaults.headers.client = head.client;
                     $cookies.put('user', user['email']);
-                    $location.path('/e-commerce/products');
+                    $location.path('/profile');
                 },
                 function(error) {
                     console.log(error);
+                    // TODO MORE USER FRIENDLY ERROR
+                    alert(error.data.errors[0]);
+                   
                 });
 
 

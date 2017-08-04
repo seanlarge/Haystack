@@ -60,8 +60,8 @@
                     }
                 },
                 resolve: {
-                    Product: function(msApi) {
-                        return msApi.resolve('e-commerce.product@get');
+                    Product: function(msApi, $stateParams) {
+                        return msApi.request('e-commerce.product@query', {id: $stateParams.id});
                     }
                 },
                 bodyClass: 'e-commerce'
@@ -109,10 +109,11 @@
         // Api
         msApiProvider.register('e-commerce.dashboard', ['app/data/e-commerce/dashboard.json']);
         msApiProvider.register('e-commerce.products', ['app/data/e-commerce/products.json']);
-        msApiProvider.register('e-commerce.product', ['app/data/e-commerce/product.json']);
+        // msApiProvider.register('e-commerce.product', ['app/data/e-commerce/product.json']);
         msApiProvider.register('e-commerce.orders', ['app/data/e-commerce/orders.json']);
         msApiProvider.register('e-commerce.statuses', ['app/data/e-commerce/statuses.json']);
         msApiProvider.register('e-commerce.order', ['app/data/e-commerce/order.json']);
+        msApiProvider.register('e-commerce.product', ['http://production.pddk5kiaw3.us-east-1.elasticbeanstalk.com/'+ 'products/:id', {id:'@id'}, {'query': {method:'GET', isArray: false}}]);
 
         // Navigation
         msNavigationServiceProvider.saveItem('apps.e-commerce', {

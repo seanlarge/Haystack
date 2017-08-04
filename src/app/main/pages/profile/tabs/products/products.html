@@ -1,3 +1,67 @@
-    <div data-ng-repeat="product in vm.products">
-      <ms-card template="'app/core/directives/ms-card/templates/template-1/template-1.html'" ng-model="product"></ms-card>
-    </div>
+
+
+                <table class="dataTable row-border hover" datatable="ng" dt-instance="vm.dtInstance"
+                       dt-options="vm.dtOptions">
+                    <thead>
+                        <tr>
+                            <th class="secondary-text">
+                                <div class="table-header">
+                                    <span class="column-title">ID</span>
+                                </div>
+                            </th>
+                            <th class="secondary-text">
+                                <div class="table-header">
+                                    <span class="column-title">Image</span>
+                                </div>
+                            </th>
+                            <th class="secondary-text">
+                                <div class="table-header">
+                                    <span class="column-title">Name</span>
+                                </div>
+                            </th>
+                            <th class="secondary-text">
+                                <div class="table-header">
+                                    <span class="column-title">Category</span>
+                                </div>
+                            </th>
+                            <th class="secondary-text">
+                                <div class="table-header">
+                                    <span class="column-title">Price</span>
+                                </div>
+                            </th>
+                            <th class="secondary-text">
+                                <div class="table-header">
+                                    <span class="column-title">Quantity</span>
+                                </div>
+                            </th>
+                            <th class="secondary-text">
+                                <div class="table-header">
+                                    <span class="column-title">Active</span>
+                                </div>
+                            </th>
+                            <th class="secondary-text">
+                                <div class="table-header">
+                                    <span class="column-title">Actions</span>
+                                </div>
+                            </th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr ng-repeat="product in ::vm.products">
+                            <td>{{product.id}}</td>
+                            <td><img class="product-image" ng-src="{{product.image}}"></td>
+                            <td>{{product.name}}</td>
+                            <td>{{product.category}}</td>
+                            <td>{{product.price}}</td>
+                            <td>{{product.quantity}}</td>
+                            <td>{{product.active}}</td>
+                            <td>
+                                <md-button class="edit-button md-icon-button" ng-click="vm.gotoProductDetail(product.id)" aria-label="Product details"
+                                           translate translate-attr-aria-label="EC.PRODUCT_DETAILS">
+                                    <md-icon md-font-icon="icon-pencil" class="s16"></md-icon>
+                                </md-button>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+

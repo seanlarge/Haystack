@@ -9,9 +9,10 @@
         <!-- <div class="toolbar-separator"></div> -->
 
         <md-nav-bar class="md-menu-toolbar navigation-toggle" nav-bar-aria-label="navigation links">
+            <md-button ng-click="vm.addProduct()" class="m-0 md-accent md-raised">Add Product</md-button>
             <md-nav-item md-nav-sref="app.e-commerce.products" name="products">Products</md-nav-item>
-            <md-nav-item md-nav-sref="app.e-commerce.orders" name="retailers">Orders</md-nav-item>
-            <md-nav-item md-nav-sref="app.e-commerce.dashboard" name="customers">Sales</md-nav-item>
+            <!--<md-nav-item md-nav-sref="app.e-commerce.orders" name="retailers">Orders</md-nav-item>-->
+            <!--<md-nav-item md-nav-sref="app.e-commerce.dashboard" name="customers">Sales</md-nav-item>-->
             <md-nav-item md-nav-sref="app.support" name="support">Support</md-nav-item>
             <md-nav-item md-nav-sref="app.contact" name="contact">Contact</md-nav-item>
             <!-- these require actual routing with ui-router or ng-route, so they won't work in the demo

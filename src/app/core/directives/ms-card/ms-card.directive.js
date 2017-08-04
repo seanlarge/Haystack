@@ -7,7 +7,7 @@
         .directive('msCard', msCardDirective);
 
     /** @ngInject */
-    function msCardDirective()
+    function msCardDirective($state)
     {
         return {
             restrict: 'E',
@@ -26,15 +26,30 @@
                 {
                     // Methods
                     scope.cardTemplateLoaded = cardTemplateLoaded;
-
+                    scope.gotoProductDetail = gotoProductDetail;
+                    scope.trim = trim;
+                    scope.switchImage = switchImage;
                     //////////
 
                     /**
                      * Emit cardTemplateLoaded event
                      */
+                    function gotoProductDetail(id)
+                    {
+                        $state.go('app.e-commerce.products.detail', {id: id});
+                    }
                     function cardTemplateLoaded()
                     {
                         scope.$emit('msCard::cardTemplateLoaded', iElement);
+                    }
+                    function trim(str){
+                        return str.slice(0, 320) + ' ...Click details for more';
+                    }
+                    function switchImage(card) {
+                        if(!card.image){
+                            return 'https://s3.amazonaws.com/haystack-image/food-healthy-vegetables-potatoes.jpg';
+                        }
+                        return card.image;
                     }
                 };
             }

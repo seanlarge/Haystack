@@ -1,5 +1,4 @@
-(function ()
-{
+(function () {
     'use strict';
 
     angular
@@ -7,16 +6,14 @@
         .controller('ProductController', ProductController);
 
     /** @ngInject */
-    function ProductController($document, $state, Product)
-    {
+    function ProductController($document, $state, $log, api, Product, S3) {
         var vm = this;
-
         // Data
         vm.taToolbar = [
             ['h1', 'h2', 'h3', 'h4', 'h5', 'h6', 'p', 'pre', 'quote', 'bold', 'italics', 'underline', 'strikeThrough', 'ul', 'ol', 'redo', 'undo', 'clear'],
             ['justifyLeft', 'justifyCenter', 'justifyRight', 'justifyFull', 'indent', 'outdent', 'html', 'insertImage', 'insertLink', 'insertVideo', 'wordcount', 'charcount']
         ];
-        vm.product = Product.data;
+        vm.product = Product;
         vm.categoriesSelectFilter = '';
         vm.ngFlowOptions = {
             // You can configure the ngFlow from here
@@ -40,54 +37,26 @@
         vm.fileAdded = fileAdded;
         vm.upload = upload;
         vm.fileSuccess = fileSuccess;
+        vm.updateProduct = updateProduct;
 
         //////////
 
-        init();
 
-        /**
-         * Initialize
-         */
-        function init()
-        {
-            // Select the correct product from the data.
-            // This is an unnecessary step for a real world app
-            // because normally, you would request the product
-            // with its id and you would get only one product.
-            // For demo purposes, we are grabbing the entire
-            // json file which have more than one product details
-            // and then hand picking the requested product from
-            // it.
-            var id = $state.params.id;
-
-            for ( var i = 0; i < vm.product.length; i++ )
-            {
-                if ( vm.product[i].id === parseInt(id) )
-                {
-                    vm.product = vm.product[i];
-                    break;
-                }
-            }
-            // END - Select the correct product from the data
-        }
 
         /**
          * Go to products page
          */
-        function gotoProducts()
-        {
+        function gotoProducts() {
             $state.go('app.e-commerce.products');
         }
 
         /**
          * On categories selector open
          */
-        function onCategoriesSelectorOpen()
-        {
+        function onCategoriesSelectorOpen() {
             // The md-select directive eats keydown events for some quick select
             // logic. Since we have a search input here, we don't need that logic.
-            $document.find('md-select-header input[type="search"]').on('keydown', function (e)
-            {
+            $document.find('md-select-header input[type="search"]').on('keydown', function (e) {
                 e.stopPropagation();
             });
         }
@@ -95,8 +64,7 @@
         /**
          * On categories selector close
          */
-        function onCategoriesSelectorClose()
-        {
+        function onCategoriesSelectorClose() {
             // Clear the filter
             vm.categoriesSelectFilter = '';
 
@@ -110,25 +78,30 @@
          *
          * @param file
          */
-        function fileAdded(file)
-        {
+        function fileAdded(file) {
+
+
             // Prepare the temp file data for media list
             var uploadingFile = {
-                id  : file.uniqueIdentifier,
+                id: file.uniqueIdentifier,
                 file: file,
                 type: 'uploading'
             };
-
+            S3.upload(file, vm.product);
+            vm.showImageProgres = true;
             // Append it to the media list
-            vm.product.images.unshift(uploadingFile);
+            //TODO NEED A PROGRESS BAR OR SPINNER
+            var changePicture = setTimeout(function () {
+                vm.product.image = 'https://s3.amazonaws.com/haystack-image/' + trim(vm.product.company_name + file.name);
+                vm.showImageProgres = false;
+            }, 2000);
         }
 
         /**
          * Upload
          * Automatically triggers when files added to the uploader
          */
-        function upload()
-        {
+        function upload() {
             // Set headers
             vm.ngFlow.flow.opts.headers = {
                 'X-Requested-With': 'XMLHttpRequest',
@@ -145,22 +118,18 @@
          * @param file
          * @param message
          */
-        function fileSuccess(file, message)
-        {
+        function fileSuccess(file, message) {
             // Iterate through the media list, find the one we
             // are added as a temp and replace its data
             // Normally you would parse the message and extract
             // the uploaded file data from it
-            angular.forEach(vm.product.images, function (media, index)
-            {
-                if ( media.id === file.uniqueIdentifier )
-                {
+            angular.forEach(vm.product.images, function (media, index) {
+                if (media.id === file.uniqueIdentifier) {
                     // Normally you would update the media item
                     // from database but we are cheating here!
                     var fileReader = new FileReader();
                     fileReader.readAsDataURL(media.file.file);
-                    fileReader.onload = function (event)
-                    {
+                    fileReader.onload = function (event) {
                         media.url = event.target.result;
                     };
 
@@ -169,5 +138,55 @@
                 }
             });
         }
+        function trim(str) {
+            return str.replace(/ /g, '');
+        }
+        function updateProduct(event) {
+            event.stopPropagation();
+
+            var updatedProduct = {};
+            updatedProduct.name = vm.product.name;
+            updatedProduct.description = vm.product.description;
+            updatedProduct.client_id = vm.product.client_id;
+            updatedProduct.category = vm.product.category;
+            updatedProduct.price_cents = vm.product.price_cents;
+            updatedProduct.quantity = vm.product.quantity;
+            updatedProduct.active = vm.product.active;
+            updatedProduct.subcategory = vm.product.subcategory;
+            updatedProduct.distribution = vm.product.distribution;
+            updatedProduct.unique_selling_propositions = vm.product.unique_selling_propositions;
+            updatedProduct.distribution_limitations = vm.product.distribution_limitations;
+            updatedProduct.unique_selling_propositions = vm.product.unique_selling_propositions;
+            updatedProduct.distribution_channels = vm.product.distribution_channels;
+            updatedProduct.drop_ship_capability = vm.product.drop_ship_capability;
+            updatedProduct.approvals_certifications = vm.product.approvals_certifications;
+            updatedProduct.private_label_capability = vm.product.private_label_capability;
+            updatedProduct.target_audience = vm.product.target_audience;
+            updatedProduct.company_name = vm.product.company_name;
+            updatedProduct.image = vm.product.image;
+            updatedProduct.sku = vm.product.sku;
+            updatedProduct.barcode = vm.product.barcode;
+            updatedProduct.width = vm.product.width;
+            updatedProduct.height = vm.product.height;
+            updatedProduct.depth = vm.product.depth;
+            updatedProduct.weight = vm.product.weight;
+            updatedProduct.extra_shipping_fee = vm.product.extra_shipping_fee;
+            updatedProduct.price_tax_excluded = vm.product.price_tax_excluded;
+            updatedProduct.price_tax_included  = vm.product.price_tax_included
+            updatedProduct.tax_rate = vm.product.tax_rate;
+            updatedProduct.compared_price = vm.product.compared_price;
+            console.log(updatedProduct.price_tax_excluded)
+            api.productsById.put({id: vm.product.id}, {product:updatedProduct},
+            function(success){
+                $log.info(success);
+                alert("Successfully Updated!");
+                //TODO $STATE.GO('app.e-commerce.products');
+            },
+            function(error){
+                alert('error');
+                console.log('called');
+            });
+        }
+
     }
 })();

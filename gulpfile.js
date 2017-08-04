@@ -8,7 +8,13 @@
 
 var gulp = require('gulp');
 var wrench = require('wrench');
-
+var gulpNgConfig = require('gulp-ng-config');
+ 
+gulp.task('env', function () {
+  gulp.src('./env-config.json')
+  .pipe(gulpNgConfig('EnvironmentConfig'))
+  .pipe(gulp.dest('./src/'))
+});
 /**
  *  This will load all js or coffee files in the gulp directory
  *  in order to load all gulp tasks

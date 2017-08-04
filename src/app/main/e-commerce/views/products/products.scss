@@ -1,101 +1,52 @@
 #e-commerce-products {
 
-    .center {
+    .photos-videos-tab {
+        padding: 0;
 
-        .header {
-            height: 136px !important;
-            min-height: 136px !important;
-            max-height: 136px !important;
-            padding: 24px 0;
+        .photos-videos {
+            padding: 8px;
 
-            .h1 {
+            .period {
 
-                md-icon {
-                    margin-right: 12px;
-                }
-            }
+                .period-title {
+                    margin-bottom: 24px;
 
-            .product-count {
-                margin: 6px 0 0 36px;
-            }
-
-            .search {
-                position: relative;
-                padding-left: 24px;
-                max-width: 480px;
-
-                .search-icon {
-                    margin: 0 -24px 0 0;
-                }
-
-                .search-input {
-                    margin: 0 0 0 32px;
-                    background: none;
-                    font-size: 16px;
-                    line-height: 40px;
-                    height: 40px;
-                    color: #FFFFFF;
-                    border-bottom: 2px solid rgba(255, 255, 255, 0.3);
-                    transition: border-color 300ms ease;
-
-                    &:focus {
-                        border-color: rgba(255, 255, 255, 1);
+                    .name {
+                        font-size: 20px;
                     }
 
-                    &::-webkit-input-placeholder {
-                        color: rgba(255, 255, 255, 0.5);
+                    .info {
+                        margin-left: 16px;
+                        font-size: 15px;
+                        color: rgba(0, 0, 0, 0.54);
                     }
                 }
-            }
-        }
 
-        .content-card {
+                .period-media {
+                    margin-bottom: 16px;
 
-            .toolbar {
-                padding: 8px;
-            }
+                    .media {
+                        margin: 0 16px 16px 0;
+                        position: relative;
 
-            .content {
-                padding: 0;
-
-                .dataTables_wrapper {
-
-                    .dataTables_scrollHead {
-                        min-height: 64px;
-
-                        table {
-
-                            th {
-                                padding-top: 20px;
-                                padding-bottom: 20px;
-                            }
-                        }
-                    }
-
-                    .dataTables_scrollBody {
-
-                        .product-image {
-                            width: 52px;
-                            height: 52px;
-                            border: 1px solid rgba(0, 0, 0, 0.12);
+                        .preview {
+                            width: 256px;
+                            height: 256px;
+                            display: block;
                         }
 
-                        .quantity-indicator {
-                            display: inline-block;
-                            vertical-align: middle;
-                            width: 8px;
-                            height: 8px;
-                            border-radius: 4px;
-                            margin-right: 8px;
-
-                            & + div {
-                                display: inline-block;
-                                vertical-align: middle;
-                            }
-                        }
-
-                        .edit-button {
-                            margin: 0;
+                        .title {
+                            position: absolute;
+                            bottom: 0;
+                            left: 0;
+                            right: 0;
+                            z-index: 10;
+                            padding: 0 16px;
+                            height: 48px;
+                            line-height: 48px;
+                            background: rgba(0, 0, 0, 0.54);
+                            color: #fff;
+                            font-size: 15px;
                         }
                     }
                 }

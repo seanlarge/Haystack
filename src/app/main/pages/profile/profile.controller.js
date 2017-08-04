@@ -7,11 +7,20 @@
         .controller('ProfileController', ProfileController);
 
     /** @ngInject */
-    function ProfileController(Timeline, About, PhotosVideos, Dashboard)
+    function ProfileController($state, $log, $rootScope, api, Timeline, About, PhotosVideos, Dashboard, Products)
     {
         var vm = this;
-        vm.dashboard = Dashboard;
         // Data
+        if($rootScope.newUser){
+            api.createClient.save({user_id: $rootScope.user.uid},
+            function(success) {
+            console.log(success);
+            },
+            function(error){
+
+            })
+        }
+        vm.dashboard = Dashboard;
         vm.widget1 = vm.dashboard.widget1;
         vm.widget2 = vm.dashboard.widget2;
         vm.widget3 = vm.dashboard.widget3;
@@ -20,6 +29,9 @@
         vm.activities = Timeline.activities;
         vm.about = About.data;
         vm.photosVideos = PhotosVideos.data;
+        vm.products = Products.data;
+        
+        vm.dtInstance = {};
 
         // Methods
 

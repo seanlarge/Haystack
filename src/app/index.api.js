@@ -11,8 +11,10 @@
         var api = {};
 
         // Base Url
-        api.baseUrl = 'https://shophaystack.herokuapp.com/';
-
+        api.baseUrl = 'http://production.pddk5kiaw3.us-east-1.elasticbeanstalk.com/';
+        
+        //client creation
+         api.createClient = $resource(api.baseUrl + 'clients')
 
         //  registration and authentication
         api.createUser = $resource(api.baseUrl + 'auth')
@@ -43,37 +45,16 @@
                     console.log(error);
                 });
         }
-
-        // $resource(api.baseUrl + 'auth/sign_out', {}, {
-        //     delete: {
-        //         method: 'OPTIONS',
-        //         headers: {
-        //             'access-token': $http.defaults.headers['access-token'],
-        //             client: $http.defaults.headers.client,
-        //             uid: $http.defaults.headers.uid
-        //         }
-        //     }
-        // });
-        // {
+        api.productsById = $resource(api.baseUrl + 'products/:id', {id:'@id'}, {'put': {method:'PUT'},'get':{method: 'GET'}});
+        api.allProducts = $resource(api.baseUrl + 'products/',{}, {'get': {method:'GET', isArray: true}});
+        api.addProduct = $resource(api.baseUrl + 'products/',{}, {'save': {method:'POST'}});
         //     'get': { method: 'GET' },
         //     'save': { method: 'POST' },
         //     'query': { method: 'GET', isArray: true },
         //     'remove': { method: 'DELETE' },
         //     'delete': { method: 'DELETE' }
-        // };
-        /*
-         api.dashboard = {
-         project  : $resource(api.baseUrl + 'dashboard/project/data.json'),
-         server   : $resource(api.baseUrl + 'dashboard/server/data.json'),
-         analytics: $resource(api.baseUrl + 'dashboard/analytics/data.json')
-         };
-         */
-        // $resource(api.baseUrl + 'users.json', {
-        //     user: {
-        //         email: '@email',
-        //         password: '@password'
-        //     }
-        // });
+        
+
 
         return api;
     }

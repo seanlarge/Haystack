@@ -10,7 +10,7 @@
             'uiGmapgoogle-maps',
             'textAngular',
             'xeditable',
-
+           
             // Core
             'app.core',
 
