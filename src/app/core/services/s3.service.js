@@ -39,7 +39,7 @@
                     $log.error('There was an error uploading your photo: ', err.message);
                 }
                 $log.info('Successfully uploaded photo.');
-                api.productsById.put({ id: product.id }, { image:'https://s3.amazonaws.com/haystack-image/' + trim(product.company_name + file.name) },
+                api.productsById.put({ id: product.id }, {product:{ image:'https://s3.amazonaws.com/haystack-image/' + trim(product.company_name + file.name) }},
                     function (success) {
                         $log.info(success);
                     },

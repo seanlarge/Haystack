@@ -113,7 +113,7 @@
         msApiProvider.register('e-commerce.orders', ['app/data/e-commerce/orders.json']);
         msApiProvider.register('e-commerce.statuses', ['app/data/e-commerce/statuses.json']);
         msApiProvider.register('e-commerce.order', ['app/data/e-commerce/order.json']);
-        msApiProvider.register('e-commerce.product', ['http://localhost:3000/products/:id', {id:'@id'}, {'query': {method:'GET', isArray: false}}]);
+        msApiProvider.register('e-commerce.product', ['http://production.pddk5kiaw3.us-east-1.elasticbeanstalk.com/'+ 'products/:id', {id:'@id'}, {'query': {method:'GET', isArray: false}}]);
 
         // Navigation
         msNavigationServiceProvider.saveItem('apps.e-commerce', {

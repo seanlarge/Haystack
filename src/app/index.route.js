@@ -9,7 +9,7 @@
     function routeConfig($stateProvider, $urlRouterProvider, $locationProvider) {
         $locationProvider.html5Mode(true);
         $locationProvider.hashPrefix('!');
-        $urlRouterProvider.otherwise('/register');
+        $urlRouterProvider.otherwise('/e-commerce/products');
 
         /**
          * Layout Style Switcher

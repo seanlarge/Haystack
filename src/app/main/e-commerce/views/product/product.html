@@ -25,7 +25,7 @@
         </div>
 
         <div>
-            <md-button class="md-raised md-background">
+            <md-button class="md-raised md-background" ng-click="vm.updateProduct($event)">
                 <span translate="EC.SAVE">SAVE</span>
             </md-button>
         </div>
@@ -49,11 +49,16 @@
                                 <label translate="EC.PRODUCT_NAME">Product Name</label>
                                 <input type="text" ng-model="vm.product.name">
                             </md-input-container>
+                             <md-input-container class="md-block">
+                                <label>Company Name</label>
+                                <input type="text" ng-model="vm.product.company_name">
+                            </md-input-container>
 
                             <h3 class="secondary-text" translate="EC.PRODUCT_DESCRIPTION">Product Description</h3>
                             <text-angular ta-toolbar="vm.taToolbar" ng-model="vm.product.description" class="pb-32"></text-angular>
 
-                            <md-input-container class="md-block">
+                            <!--TODO BRING THESE BACK IN AFTER MVP-->
+                            <!--<md-input-container class="md-block">
                                 <label translate="EC.CATEGORIES">Categories</label>
                                 <md-select ng-model="vm.product.categories" md-on-open="vm.onCategoriesSelectorOpen()" md-on-close="vm.onCategoriesSelectorClose()"
                                     multiple>
@@ -71,7 +76,8 @@
                             <h3 class="tags secondary-text" translate="EC.TAGS">Tags</h3>
                             <md-chips ng-model="vm.product.tags" placeholder="Enter a tag" delete-button-label="Remove Tag" delete-hint="Press delete to remove tag"
                                 secondary-placeholder="+Tag">
-                            </md-chips>
+                            </md-chips>-->
+
                         </form>
                     </div>
                 </md-tab-body>
@@ -79,7 +85,7 @@
 
             <md-tab>
                 <md-tab-label>
-                    <span translate="EC.PRODUCT_IMAGES">Product Images</span>
+                    <span translate="EC.PRODUCT_IMAGES">Product Image</span>
                 </md-tab-label>
 
                 <md-tab-body>
@@ -100,17 +106,10 @@
                             </div>
 
                             <div layout="row" layout-align="start start" layout-wrap>
-                                <div >
-                                    <!--<div class="product-image uploading"  layout="row"
-                                         layout-align="center center">
-                                        <div class="overlay" layout="column" layout-align="center center">
-                                            <md-progress-linear md-mode="determinate"
-                                                                value="{{image.file.progress() * 100}}">
-                                            </md-progress-linear>
-                                        </div>
-                                        <img class="media" flow-img="image.file">
-                                    </div>-->
-
+                                <div>
+                                    <div class="overlay" layout="column" layout-align="center center" ng-show="vm.showImageProgres">
+                                        <md-progress-linear md-mode="indeterminate"></md-progress-linear>
+                                    </div>
                                     <div class="product-image"  layout="row"
                                          layout-align="center center">
                                         <img class="media" ng-src="{{vm.product.image}}">
@@ -133,27 +132,30 @@
                             <md-input-container class="md-block md-icon-float">
                                 <label translate="EC.TAX_EXCL_PRICE">Tax Excluded Price</label>
                                 <md-icon md-font-icon="icon icon-currency-usd"></md-icon>
-                                <input type="number" step="0.01" ng-model="vm.product.priceTaxExcl">
+                                <input type="float" step="0.01" ng-model="vm.product.price_tax_excluded">
                             </md-input-container>
 
                             <md-input-container class="md-block md-icon-float">
                                 <label translate="EC.TAX_INCL_PRICE">Tax Included Price</label>
                                 <md-icon md-font-icon="icon icon-currency-usd"></md-icon>
-                                <input type="number" step="0.01" ng-model="vm.product.priceTaxIncl">
+                                <input type="float" step="0.01" ng-model="vm.product.price_tax_included">
                             </md-input-container>
 
                             <md-input-container class="md-block md-icon-float">
                                 <label translate="EC.TAX_RATE">Tax Rate</label>
                                 <md-icon md-font-icon="icon icon-percent"></md-icon>
-                                <input type="number" step="0.01" ng-model="vm.product.taxRate">
+                                <input type="float" step="0.01" ng-model="vm.product.tax_rate">
                             </md-input-container>
 
-                            <md-input-container class="md-block md-icon-float">
+                            <!--TODO CONSIDER AFTER MVP !! -->
+
+                            <!--<md-input-container class="md-block md-icon-float">
                                 <label translate="EC.COMPARED_PRICE">Compared Price</label>
                                 <md-icon md-font-icon="icon icon-currency-usd"></md-icon>
-                                <input type="number" step="0.01" ng-model="vm.product.comparedPrice">
+                                <input type="number" step="0.01" ng-model="vm.product.compared_price">
                                 <div class="input-hint">Add a compare price to show next to the real price</div>
-                            </md-input-container>
+                            </md-input-container>-->
+
                         </form>
                     </div>
                 </md-tab-body>
@@ -219,7 +221,7 @@
                             <md-input-container class="md-block md-icon-float">
                                 <label translate="EC.EXTRA_SHIPPING_FEE">Extra Shipping Fee</label>
                                 <md-icon md-font-icon="icon icon-currency-usd"></md-icon>
-                                <input type="text" ng-model="vm.product.extraShippingFee">
+                                <input type="text" ng-model="vm.product.extra_shipping_fee">
                             </md-input-container>
                         </form>
                     </div>
@@ -231,3 +233,6 @@
     <!-- / CONTENT -->
 
 </div>
+
+
+   

@@ -11,7 +11,7 @@
         var api = {};
 
         // Base Url
-        api.baseUrl = 'http://localhost:3000/';
+        api.baseUrl = 'http://production.pddk5kiaw3.us-east-1.elasticbeanstalk.com/';
         
         //client creation
          api.createClient = $resource(api.baseUrl + 'clients')
@@ -47,6 +47,7 @@
         }
         api.productsById = $resource(api.baseUrl + 'products/:id', {id:'@id'}, {'put': {method:'PUT'},'get':{method: 'GET'}});
         api.allProducts = $resource(api.baseUrl + 'products/',{}, {'get': {method:'GET', isArray: true}});
+        api.addProduct = $resource(api.baseUrl + 'products/',{}, {'save': {method:'POST'}});
         //     'get': { method: 'GET' },
         //     'save': { method: 'POST' },
         //     'query': { method: 'GET', isArray: true },

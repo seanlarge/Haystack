@@ -55,6 +55,9 @@
                 },
                 function(error) {
                     console.log(error);
+                    // TODO MORE USER FRIENDLY ERROR
+                    alert(error.data.errors[0]);
+                   
                 });
 
 

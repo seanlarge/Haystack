@@ -1,0 +1,12 @@
+{
+  "local": {
+    "EnvironmentConfig": {
+      "api": "http://localhost:3000/"
+    }
+  },
+  "production": {
+    "EnvironmentConfig": {
+      "api": "http://production.pddk5kiaw3.us-east-1.elasticbeanstalk.com/"
+    }
+  }
+}

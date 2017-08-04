@@ -1,0 +1,45 @@
+<md-dialog style="width:600px;height:610px; ">
+    <div flex layout="row" layout-align="center center" style="padding:3%;">
+        <span class="md-headline">Product Information</span>
+    </div>
+    <form name="addProductForm" class="md-inline-form">
+        <md-dialog-content>
+            <div layout="column" layout-gt-xs="row" flex>
+                <md-input-container flex="100" flex-gt-xs="100">
+                    <input type="text" name="productname" ng-model="vm.product.name" placeholder="product name" required>
+                    <div ng-messages="addProductForm.productname.$error" ng-show="addProductForm.firstname.$touched" role="alert">
+                        <div ng-message="required">
+                            <span>Product name field is required.</span>
+                        </div>
+                    </div>
+                </md-input-container>
+            </div>
+            <div layout="column" layout-gt-xs="row" flex>
+                <md-input-container flex="100" flex-gt-xs="100">
+                    <input type="text" name="companyname" ng-model="vm.product.company_name" placeholder="company name" required>
+                    <div ng-messages="addProductForm.companyname.$error" ng-show="addProductForm.firstname.$touched" role="alert">
+                        <div ng-message="required">
+                            <span>Company name field is required.</span>
+                        </div>
+                    </div>
+                </md-input-container>
+            </div>
+
+            <md-input-container class="md-block">
+                <label>Description</label>
+                <textarea name="description" ng-model="vm.product.description" columns="1" md-maxlength="300" rows="5" required></textarea>
+                <div ng-messages="addProductForm.description.$error" ng-show="addProductForm.description.$touched" role="alert" multiple>
+                    <div ng-message="required"><span>Description field is required.</span></div>
+                    <div ng-message="md-maxlength">
+                        <span>Description can't be longer than 300 characters.</span>
+                    </div>
+                </div>
+            </md-input-container>
+        </md-dialog-content>
+    </form>
+    <md-dialog-actions>
+        <div class="navigation" flex layout="row" layout-align="center center">
+            <md-button ng-disabled="addProductForm.$pristine || addProductForm.$invalid" class="m-0 md-accent md-raised" ng-click="vm.send()">Add Product</md-button>
+        </div>
+    </md-dialog-actions>
+</md-dialog>
