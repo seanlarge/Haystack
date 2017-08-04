@@ -28,4 +28,3 @@ gulp serve
 Roughly made 3 views so far: /register, /login, and /sample
 
 ## Developers
-Sean Large
