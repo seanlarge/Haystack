@@ -22,7 +22,10 @@ npm install && bower install
 gulp serve
 ```
 
-:smile: :heart:
+
 
 ## Previewing the App
 Roughly made 3 views so far: /register, /login, and /sample
+
+## Developers
+Sean Large
